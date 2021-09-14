@@ -7,7 +7,7 @@
             "clean": true,
             "code_block": "",
             "description": "",
-            "hash": "670d6ac8c6e2a4da0d17f5bf9c3114b815e47ad0",
+            "hash": "9baa524d3151f8162cf7926657f49e8f2fe828de",
             "joint": {
                 "cells": [
                     {
@@ -217,12 +217,12 @@
                         "join_code": "# read-only block view not available",
                         "join_optional": [],
                         "join_start": 1,
-                        "line_end": 189,
-                        "line_start": 176,
+                        "line_end": 212,
+                        "line_start": 199,
                         "name": "",
                         "notes": "",
                         "number": 0,
-                        "order": 9,
+                        "order": 10,
                         "outPorts": [],
                         "ports": {
                             "groups": {
@@ -1509,7 +1509,7 @@
                                 }
                             },
                             "g.delete": {
-                                "display": "none"
+                                "display": "block"
                             },
                             "g.error": {
                                 "opacity": 0
@@ -2649,7 +2649,7 @@
                         "status": "",
                         "title": "Investigate",
                         "type": "coa.Action",
-                        "warn": "",
+                        "warn": false,
                         "z": 47
                     },
                     {
@@ -3008,6 +3008,416 @@
                         "type": "coa.Prompt",
                         "warn": false,
                         "z": 49
+                    },
+                    {
+                        "attrs": {
+                            ".connection": {
+                                "stroke": "#818D99",
+                                "stroke-width": 2
+                            },
+                            ".marker-target": {
+                                "d": "M 10 0 L 0 5 L 10 10 z",
+                                "fill": "#818D99",
+                                "stroke": "#818D99"
+                            }
+                        },
+                        "connector": {
+                            "args": {
+                                "radius": 5
+                            },
+                            "name": "rounded"
+                        },
+                        "endDirections": [
+                            "left"
+                        ],
+                        "id": "108ec0ac-b84e-4df4-9ae2-d7200403238f",
+                        "router": {
+                            "name": "metro"
+                        },
+                        "source": {
+                            "id": "d709a2f0-7ec6-45d3-b716-79fdc105d9ff",
+                            "selector": "> g:nth-child(1) > g:nth-child(2) > g:nth-child(1) > circle:nth-child(1)"
+                        },
+                        "startDirections": [
+                            "right"
+                        ],
+                        "target": {
+                            "id": "ad2c97ef-664b-4275-8667-7ce0ffe822bf",
+                            "selector": ".port-body[type=\"input\"]"
+                        },
+                        "type": "link",
+                        "z": 51
+                    },
+                    {
+                        "action": "geolocate ip",
+                        "action_type": "investigate",
+                        "active": false,
+                        "active_keys": {},
+                        "active_values": {
+                            "ip": "ip_reputation_1:artifact:*.cef.src_ip"
+                        },
+                        "angle": 0,
+                        "app": "MaxMind",
+                        "appid": "c566e153-3118-4033-abda-14dd9748c91a",
+                        "approver": "",
+                        "assets": [
+                            {
+                                "action": "geolocate ip",
+                                "actions": [
+                                    "geolocate ip",
+                                    "test connectivity"
+                                ],
+                                "active": true,
+                                "app_name": "MaxMind",
+                                "app_version": "2.0.23",
+                                "appid": "c566e153-3118-4033-abda-14dd9748c91a",
+                                "asset_name": "maxmind",
+                                "config_type": "asset",
+                                "count": 0,
+                                "fields": {
+                                    "ip": "ip_reputation_1:artifact:*.cef.src_ip"
+                                },
+                                "has_app": true,
+                                "id": 2,
+                                "loaded": false,
+                                "missing": false,
+                                "name": "maxmind",
+                                "output": [
+                                    {
+                                        "data_path": "action_result.status",
+                                        "data_type": "string",
+                                        "example_values": [
+                                            "success",
+                                            "failed"
+                                        ]
+                                    },
+                                    {
+                                        "data_path": "action_result.data.*.continent_name",
+                                        "data_type": "string",
+                                        "example_values": [
+                                            "Asia"
+                                        ]
+                                    },
+                                    {
+                                        "data_path": "action_result.data.*.country_iso_code",
+                                        "data_type": "string",
+                                        "example_values": [
+                                            "IN"
+                                        ]
+                                    },
+                                    {
+                                        "data_path": "action_result.data.*.country_name",
+                                        "data_type": "string",
+                                        "example_values": [
+                                            "India"
+                                        ],
+                                        "map_info": "Country"
+                                    },
+                                    {
+                                        "data_path": "action_result.data.*.latitude",
+                                        "data_type": "numeric",
+                                        "example_values": [
+                                            23.0333
+                                        ],
+                                        "map_info": "latitude"
+                                    },
+                                    {
+                                        "data_path": "action_result.data.*.longitude",
+                                        "data_type": "numeric",
+                                        "example_values": [
+                                            72.6167
+                                        ],
+                                        "map_info": "longitude"
+                                    },
+                                    {
+                                        "contains": [
+                                            "ip"
+                                        ],
+                                        "data_path": "action_result.parameter.ip",
+                                        "data_type": "string",
+                                        "example_values": [
+                                            "203.88.139.34"
+                                        ],
+                                        "map_info": "IP Address"
+                                    },
+                                    {
+                                        "contains": [
+                                            "ip"
+                                        ],
+                                        "data_path": "action_result.parameter.ip",
+                                        "data_type": "string",
+                                        "example_values": [
+                                            "203.88.139.34"
+                                        ],
+                                        "map_info": "name"
+                                    },
+                                    {
+                                        "data_path": "action_result.data.*.city_name",
+                                        "data_type": "string",
+                                        "example_values": [
+                                            "Ahmedabad"
+                                        ],
+                                        "map_info": "City"
+                                    },
+                                    {
+                                        "data_path": "action_result.data.*.postal_code",
+                                        "data_type": "string",
+                                        "example_values": [
+                                            "380007"
+                                        ],
+                                        "map_info": "Postal Code"
+                                    },
+                                    {
+                                        "data_path": "action_result.data.*.as_org",
+                                        "data_type": "string",
+                                        "map_info": "Organization"
+                                    },
+                                    {
+                                        "data_path": "action_result.data.*.state_iso_code",
+                                        "data_type": "string",
+                                        "example_values": [
+                                            "GJ"
+                                        ]
+                                    },
+                                    {
+                                        "data_path": "action_result.data.*.state_name",
+                                        "data_type": "string",
+                                        "example_values": [
+                                            "Gujarat"
+                                        ],
+                                        "map_info": "State/Province"
+                                    },
+                                    {
+                                        "data_path": "action_result.data.*.time_zone",
+                                        "data_type": "string",
+                                        "example_values": [
+                                            "Asia/Kolkata"
+                                        ]
+                                    },
+                                    {
+                                        "data_path": "action_result.summary.city",
+                                        "data_type": "string",
+                                        "example_values": [
+                                            "Ahmedabad"
+                                        ]
+                                    },
+                                    {
+                                        "data_path": "action_result.summary.state",
+                                        "data_type": "string",
+                                        "example_values": [
+                                            "GJ"
+                                        ]
+                                    },
+                                    {
+                                        "data_path": "action_result.summary.country",
+                                        "data_type": "string",
+                                        "example_values": [
+                                            "India"
+                                        ]
+                                    },
+                                    {
+                                        "data_path": "action_result.message",
+                                        "data_type": "string",
+                                        "example_values": [
+                                            "City: Ahmedabad, State: GJ, Country: India"
+                                        ]
+                                    },
+                                    {
+                                        "data_path": "summary.total_objects",
+                                        "data_type": "numeric",
+                                        "example_values": [
+                                            1
+                                        ]
+                                    },
+                                    {
+                                        "data_path": "summary.total_objects_successful",
+                                        "data_type": "numeric",
+                                        "example_values": [
+                                            1
+                                        ]
+                                    }
+                                ],
+                                "parameters": {
+                                    "ip": {
+                                        "allow_list": true,
+                                        "contains": [
+                                            "ip"
+                                        ],
+                                        "data_type": "string",
+                                        "default": null,
+                                        "description": "IP to geolocate",
+                                        "key": "ip",
+                                        "primary": true,
+                                        "required": true
+                                    }
+                                },
+                                "product_name": "GeoIP2",
+                                "product_vendor": "MaxMind",
+                                "targets": "2",
+                                "type": "information"
+                            }
+                        ],
+                        "attrs": {
+                            ".action": {
+                                "text": "geolocate ip"
+                            },
+                            ".background": {
+                                "fill": "#000000",
+                                "stroke": "#5C6773"
+                            },
+                            ".color-band": {
+                                "fill": "#3C444D"
+                            },
+                            ".inPorts>.port-in": {
+                                "ref": ".background",
+                                "ref-x": 0.5
+                            },
+                            ".inPorts>.port-in>.port-body": {
+                                "port": {
+                                    "id": "in",
+                                    "type": "in"
+                                }
+                            },
+                            ".message": {
+                                "opacity": 0,
+                                "ref-x": 5,
+                                "ref-y": 105,
+                                "text": "Configuring now"
+                            },
+                            ".outPorts>.port-out": {
+                                "ref": ".background",
+                                "ref-x": 0.5
+                            },
+                            ".outPorts>.port-out>.port-body": {
+                                "port": {
+                                    "id": "out",
+                                    "type": "out"
+                                }
+                            },
+                            ".title": {
+                                "text": "Investigate"
+                            },
+                            "g.delete": {
+                                "display": "none"
+                            },
+                            "g.error": {
+                                "opacity": 0
+                            },
+                            "g.icon image": {
+                                "xlink:href": "/inc/coa/img/block_icon_investigate.svg"
+                            },
+                            "g.notes": {
+                                "display": "block"
+                            }
+                        },
+                        "block_code": "def geolocate_ip_1(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):\n    phantom.debug('geolocate_ip_1() called')\n        \n    #phantom.debug('Action: {0} {1}'.format(action['name'], ('SUCCEEDED' if success else 'FAILED')))\n    \n    # collect data for 'geolocate_ip_1' call\n    inputs_data_1 = phantom.collect2(container=container, datapath=['ip_reputation_1:artifact:*.cef.src_ip', 'ip_reputation_1:artifact:*.id'], action_results=results)\n\n    parameters = []\n    \n    # build parameters list for 'geolocate_ip_1' call\n    for inputs_item_1 in inputs_data_1:\n        if inputs_item_1[0]:\n            parameters.append({\n                'ip': inputs_item_1[0],\n                # context (artifact id) is added to associate results with the artifact\n                'context': {'artifact_id': inputs_item_1[1]},\n            })\n\n    phantom.act(action=\"geolocate ip\", parameters=parameters, assets=['maxmind'], name=\"geolocate_ip_1\", parent_action=action)\n\n    return",
+                        "callback_code": "",
+                        "callback_start": 1,
+                        "callsback": true,
+                        "color": "",
+                        "connected_to_start": true,
+                        "connection_name": "ip reputation",
+                        "connection_type": "action",
+                        "custom_callback": "",
+                        "custom_code": "",
+                        "custom_join": "",
+                        "custom_name": "",
+                        "delay": 0,
+                        "description": "",
+                        "has_custom": false,
+                        "has_custom_block": false,
+                        "has_custom_callback": false,
+                        "has_custom_join": false,
+                        "id": "ad2c97ef-664b-4275-8667-7ce0ffe822bf",
+                        "inPorts": [
+                            "in"
+                        ],
+                        "join_code": "",
+                        "join_optional": [],
+                        "join_start": 1,
+                        "line_end": 199,
+                        "line_start": 176,
+                        "message": "Configuring now",
+                        "name": "geolocate ip",
+                        "notes": "",
+                        "number": 1,
+                        "order": 9,
+                        "outPorts": [
+                            "out"
+                        ],
+                        "ports": {
+                            "groups": {
+                                "in": {
+                                    "attrs": {
+                                        ".port-body": {
+                                            "fill": "#fff",
+                                            "magnet": true,
+                                            "r": 10,
+                                            "stroke": "#000"
+                                        },
+                                        ".port-label": {
+                                            "fill": "#000"
+                                        }
+                                    },
+                                    "label": {
+                                        "position": {
+                                            "args": {
+                                                "y": 10
+                                            },
+                                            "name": "left"
+                                        }
+                                    },
+                                    "position": {
+                                        "name": "left"
+                                    }
+                                },
+                                "out": {
+                                    "attrs": {
+                                        ".port-body": {
+                                            "fill": "#fff",
+                                            "magnet": true,
+                                            "r": 10,
+                                            "stroke": "#000"
+                                        },
+                                        ".port-label": {
+                                            "fill": "#000"
+                                        }
+                                    },
+                                    "label": {
+                                        "position": {
+                                            "args": {
+                                                "y": 10
+                                            },
+                                            "name": "right"
+                                        }
+                                    },
+                                    "position": {
+                                        "name": "right"
+                                    }
+                                }
+                            }
+                        },
+                        "position": {
+                            "x": 520,
+                            "y": 240
+                        },
+                        "previous_function": "",
+                        "previous_name": "geolocate_ip_1",
+                        "required_params": {
+                            "ip": true
+                        },
+                        "reviewer": "",
+                        "show_number": false,
+                        "size": {
+                            "height": 100,
+                            "width": 180
+                        },
+                        "state": "app_action_assets",
+                        "status": "",
+                        "title": "Investigate",
+                        "type": "coa.Action",
+                        "warn": "",
+                        "z": 53
                     },
                     {
                         "action": "ip reputation",
@@ -3498,7 +3908,7 @@
                                 "opacity": 1
                             }
                         },
-                        "block_code": "def ip_reputation_1(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):\n    phantom.debug('ip_reputation_1() called')\n\n    # collect data for 'ip_reputation_1' call\n    container_data = phantom.collect2(container=container, datapath=['artifact:*.cef.src_ip', 'artifact:*.id'])\n\n    parameters = []\n    \n    # build parameters list for 'ip_reputation_1' call\n    for container_item in container_data:\n        if container_item[0]:\n            parameters.append({\n                'ip': container_item[0],\n                # context (artifact id) is added to associate results with the artifact\n                'context': {'artifact_id': container_item[1]},\n            })\n\n    phantom.act(action=\"ip reputation\", parameters=parameters, assets=['virustotal'], name=\"ip_reputation_1\")\n\n    return",
+                        "block_code": "def ip_reputation_1(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):\n    phantom.debug('ip_reputation_1() called')\n\n    # collect data for 'ip_reputation_1' call\n    container_data = phantom.collect2(container=container, datapath=['artifact:*.cef.src_ip', 'artifact:*.id'])\n\n    parameters = []\n    \n    # build parameters list for 'ip_reputation_1' call\n    for container_item in container_data:\n        if container_item[0]:\n            parameters.append({\n                'ip': container_item[0],\n                # context (artifact id) is added to associate results with the artifact\n                'context': {'artifact_id': container_item[1]},\n            })\n\n    phantom.act(action=\"ip reputation\", parameters=parameters, assets=['virustotal'], callback=geolocate_ip_1, name=\"ip_reputation_1\")\n\n    return",
                         "callback_code": "",
                         "callback_start": 1,
                         "callsback": true,
@@ -3604,8 +4014,8 @@
                         "status": "",
                         "title": "Investigate",
                         "type": "coa.Action",
-                        "warn": "",
-                        "z": 50
+                        "warn": false,
+                        "z": 54
                     }
                 ]
             },
@@ -3615,7 +4025,7 @@
         "schema": 4,
         "version": "4.10.6.61906"
     },
-    "create_time": "2021-09-13T18:17:51.300339+00:00",
+    "create_time": "2021-09-14T21:01:12.409927+00:00",
     "draft_mode": false,
     "labels": [
         "events"
