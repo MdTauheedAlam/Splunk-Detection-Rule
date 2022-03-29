@@ -41,7 +41,7 @@ platformdirs==2.4.1
 pre-commit==2.16.0
 progress==1.6
 prompt-toolkit==1.0.14
-pycvesearch==1.0.1
+pycvesearch==1.1
 pyfiglet==0.8.post1
 Pygments==2.10.0
 PyInquirer==1.0.3
